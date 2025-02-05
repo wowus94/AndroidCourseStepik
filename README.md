@@ -2,3 +2,4 @@
 
 # 05.02.2025
 - создан domain-слой приложения Shopping List
+- создан data-слой приложения Shopping List
