@@ -1,32 +1,33 @@
 package ru.vlyashuk.androidcoursestepik.presentation
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModelProvider
 import ru.vlyashuk.androidcoursestepik.R
-import ru.vlyashuk.androidcoursestepik.presentation.viewmodels.MainViewModel
+import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(view)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        viewModel.shopList.observe(this) {
-            Log.i("TEST", it.toString())
+        binding.shoppingList.setOnClickListener {
+            val navigate = Intent(this, ShoppingListActivity::class.java)
+            startActivity(navigate)
         }
     }
 }
