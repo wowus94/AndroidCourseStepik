@@ -1,13 +1,19 @@
 package ru.vlyashuk.androidcoursestepik.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import ru.vlyashuk.androidcoursestepik.R
+import ru.vlyashuk.androidcoursestepik.presentation.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,6 +22,11 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel.shopList.observe(this) {
+            Log.i("TEST", it.toString())
         }
     }
 }
