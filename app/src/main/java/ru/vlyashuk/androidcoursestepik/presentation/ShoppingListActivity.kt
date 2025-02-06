@@ -2,7 +2,6 @@ package ru.vlyashuk.androidcoursestepik.presentation
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -26,7 +25,7 @@ class ShoppingListActivity : AppCompatActivity() {
         setupRecyclerViewAdapter()
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
         mainViewModel.shopList.observe(this) {
-            shopListAdapter.shopList = it
+            shopListAdapter.submitList(it)
         }
 
     }
@@ -65,7 +64,7 @@ class ShoppingListActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val shopItem = shopListAdapter.shopList[viewHolder.adapterPosition]
+                val shopItem = shopListAdapter.currentList[viewHolder.adapterPosition]
                 mainViewModel.deleteShopItem(shopItem)
             }
         }
