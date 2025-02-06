@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AndroidCourseStepik</string>
+    <string name="select_app">Выберите приложение</string>
+    <string name="add_shop_item">Добавить покупку</string>
+    <string name="shopping_list">Список покупок</string>
 </resources>
