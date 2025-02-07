@@ -3,4 +3,9 @@
     <string name="select_app">Выберите приложение</string>
     <string name="add_shop_item">Добавить покупку</string>
     <string name="shopping_list">Список покупок</string>
+    <string name="save">Сохранить</string>
+    <string name="name">Название</string>
+    <string name="count">Количество</string>
+    <string name="error_input_name">Ошибка ввода названия</string>
+    <string name="error_input_count">Ошибка ввода количества</string>
 </resources>

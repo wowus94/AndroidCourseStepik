@@ -1,11 +1,13 @@
 package ru.vlyashuk.androidcoursestepik.presentation
 
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textfield.TextInputLayout
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityShoppingListBinding
 import ru.vlyashuk.androidcoursestepik.presentation.adapters.ShopListRecyclerViewAdapter
 import ru.vlyashuk.androidcoursestepik.presentation.viewmodels.MainViewModel
@@ -26,6 +28,11 @@ class ShoppingListActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
         mainViewModel.shopList.observe(this) {
             shopListAdapter.submitList(it)
+        }
+
+        binding.addShopItemButton.setOnClickListener {
+            val intent = ShopItemActivity.newIntentAddMode(this)
+            startActivity(intent)
         }
 
     }
@@ -74,7 +81,8 @@ class ShoppingListActivity : AppCompatActivity() {
 
     private fun setupOnClickListener() {
         shopListAdapter.onShopItemClickListener = {
-            Log.i("CLICK", it.name)
+            val intent = ShopItemActivity.newIntentEditMode(this, it.id)
+            startActivity(intent)
         }
     }
 
