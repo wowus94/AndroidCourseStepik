@@ -1,18 +1,20 @@
 package ru.vlyashuk.androidcoursestepik.presentation
 
+import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textfield.TextInputLayout
+import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityShoppingListBinding
 import ru.vlyashuk.androidcoursestepik.presentation.adapters.ShopListRecyclerViewAdapter
 import ru.vlyashuk.androidcoursestepik.presentation.viewmodels.MainViewModel
 
-class ShoppingListActivity : AppCompatActivity() {
+class ShoppingListActivity : AppCompatActivity(),
+    ShopItemFragment.OnShopItemEditingFinishedListener {
 
     private lateinit var binding: ActivityShoppingListBinding
     private lateinit var mainViewModel: MainViewModel
@@ -31,8 +33,14 @@ class ShoppingListActivity : AppCompatActivity() {
         }
 
         binding.addShopItemButton.setOnClickListener {
-            val intent = ShopItemActivity.newIntentAddMode(this)
-            startActivity(intent)
+            if (isOnePaneMode()) {
+                launchFragment(ShopItemFragment.newInstanceAddItem(), R.id.shoppingList)
+            } else {
+                launchFragment(
+                    ShopItemFragment.newInstanceAddItem(),
+                    R.id.fragmentContainerViewLand
+                )
+            }
         }
 
     }
@@ -81,8 +89,14 @@ class ShoppingListActivity : AppCompatActivity() {
 
     private fun setupOnClickListener() {
         shopListAdapter.onShopItemClickListener = {
-            val intent = ShopItemActivity.newIntentEditMode(this, it.id)
-            startActivity(intent)
+            if (isOnePaneMode()) {
+                launchFragment(ShopItemFragment.newInstanceEditItem(it.id), R.id.shoppingList)
+            } else {
+                launchFragment(
+                    ShopItemFragment.newInstanceEditItem(it.id),
+                    R.id.fragmentContainerViewLand
+                )
+            }
         }
     }
 
@@ -92,4 +106,25 @@ class ShoppingListActivity : AppCompatActivity() {
         }
     }
 
+    private fun launchFragment(fragment: Fragment, container: Int) {
+        supportFragmentManager.popBackStack()
+        supportFragmentManager.beginTransaction()
+            .replace(container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun isOnePaneMode(): Boolean {
+        return resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
+    }
+
+    override fun shopItemEditingFinished(isEditMode: Boolean) {
+        val message = if (isEditMode) {
+            getString(R.string.edit_item_saved)
+        } else {
+            getString(R.string.add_new_item)
+        }
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        supportFragmentManager.popBackStack()
+    }
 }

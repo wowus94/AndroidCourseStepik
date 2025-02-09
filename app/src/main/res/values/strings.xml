@@ -8,4 +8,6 @@
     <string name="count">Количество</string>
     <string name="error_input_name">Ошибка ввода названия</string>
     <string name="error_input_count">Ошибка ввода количества</string>
+    <string name="edit_item_saved">Изменения сохранены</string>
+    <string name="add_new_item">Новый элемент добавлен</string>
 </resources>
