@@ -1,11 +1,11 @@
-package ru.vlyashuk.androidcoursestepik.presentation.viewmodels
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
-import ru.vlyashuk.androidcoursestepik.data.ShopListRepositoryImpl
-import ru.vlyashuk.androidcoursestepik.domain.DeleteShopItemUseCase
-import ru.vlyashuk.androidcoursestepik.domain.EditShopItemUseCase
-import ru.vlyashuk.androidcoursestepik.domain.GetShopListUseCase
-import ru.vlyashuk.androidcoursestepik.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.data.ShopListRepositoryImpl
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.DeleteShopItemUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.EditShopItemUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.GetShopListUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 
 class MainViewModel : ViewModel() {
 

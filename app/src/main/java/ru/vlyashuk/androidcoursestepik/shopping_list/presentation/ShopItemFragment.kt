@@ -1,4 +1,4 @@
-package ru.vlyashuk.androidcoursestepik.presentation
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import android.content.Context
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentShopItemBinding
-import ru.vlyashuk.androidcoursestepik.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 
 class ShopItemFragment : Fragment() {
 

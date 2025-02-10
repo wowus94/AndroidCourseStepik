@@ -1,4 +1,4 @@
-package ru.vlyashuk.androidcoursestepik.presentation
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityShoppingListBinding
-import ru.vlyashuk.androidcoursestepik.presentation.adapters.ShopListRecyclerViewAdapter
-import ru.vlyashuk.androidcoursestepik.presentation.viewmodels.MainViewModel
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.adapters.ShopListRecyclerViewAdapter
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.MainViewModel
 
 class ShoppingListActivity : AppCompatActivity(),
     ShopItemFragment.OnShopItemEditingFinishedListener {
