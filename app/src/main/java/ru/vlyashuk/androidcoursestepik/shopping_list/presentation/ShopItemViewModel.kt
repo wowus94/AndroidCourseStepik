@@ -1,13 +1,13 @@
-package ru.vlyashuk.androidcoursestepik.presentation
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.vlyashuk.androidcoursestepik.data.ShopListRepositoryImpl
-import ru.vlyashuk.androidcoursestepik.domain.AddShopItemUseCase
-import ru.vlyashuk.androidcoursestepik.domain.EditShopItemUseCase
-import ru.vlyashuk.androidcoursestepik.domain.GetShopItemUseCase
-import ru.vlyashuk.androidcoursestepik.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.data.ShopListRepositoryImpl
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.AddShopItemUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.EditShopItemUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.GetShopItemUseCase
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 
 class ShopItemViewModel : ViewModel() {
 

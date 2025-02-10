@@ -1,7 +1,7 @@
-package ru.vlyashuk.androidcoursestepik.presentation
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import androidx.recyclerview.widget.DiffUtil
-import ru.vlyashuk.androidcoursestepik.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 
 class ShopItemDiffCallback : DiffUtil.ItemCallback<ShopItem>() {
     override fun areItemsTheSame(oldItem: ShopItem, newItem: ShopItem): Boolean {

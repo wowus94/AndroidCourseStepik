@@ -1,4 +1,4 @@
-package ru.vlyashuk.androidcoursestepik.domain
+package ru.vlyashuk.androidcoursestepik.shopping_list.domain
 
 import androidx.lifecycle.LiveData
 

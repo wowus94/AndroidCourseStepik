@@ -13,10 +13,13 @@
         android:theme="@style/Theme.AndroidCourseStepik"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ShoppingListActivity"
+            android:name=".the_number.presentation.MainNumberActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".shopping_list.presentation.ShoppingListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

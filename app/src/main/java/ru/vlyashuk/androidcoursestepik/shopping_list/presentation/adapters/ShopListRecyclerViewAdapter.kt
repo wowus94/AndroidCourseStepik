@@ -1,12 +1,12 @@
-package ru.vlyashuk.androidcoursestepik.presentation.adapters
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import ru.vlyashuk.androidcoursestepik.R
-import ru.vlyashuk.androidcoursestepik.domain.ShopItem
-import ru.vlyashuk.androidcoursestepik.presentation.ShopItemDiffCallback
-import ru.vlyashuk.androidcoursestepik.presentation.ShopItemViewHolder
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShopItemDiffCallback
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShopItemViewHolder
 
 class ShopListRecyclerViewAdapter :
     ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCallback()) {

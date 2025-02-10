@@ -1,4 +1,4 @@
-package ru.vlyashuk.androidcoursestepik.presentation
+package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import android.view.View
 import android.widget.TextView
