@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        tools:context=".the_number.presentation.fragments.WelcomeFragment">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="@dimen/image_view_size_150dp"
+            android:layout_height="@dimen/image_view_size_150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_40dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_brain" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/TitleTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="@string/the_number" />
+
+        <TextView
+            android:id="@+id/gameRulesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_weight="1"
+            android:text="@string/game_rules" />
+
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16dp"
+            android:text="@string/continue_text" />
+
+    </LinearLayout>
+
+</ScrollView>
