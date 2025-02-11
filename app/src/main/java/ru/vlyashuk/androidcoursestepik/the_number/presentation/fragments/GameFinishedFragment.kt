@@ -43,6 +43,10 @@ class GameFinishedFragment : Fragment() {
                     retryGame()
                 }
             })
+
+        binding.retryButton.setOnClickListener {
+            retryGame()
+        }
     }
 
     private fun retryGame() {
@@ -59,9 +63,9 @@ class GameFinishedFragment : Fragment() {
 
     private fun parseArgs() {
         gameResult = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
-            requireArguments().getSerializable(KEY_GAME_RESULT, GameResult::class.java)
+            requireArguments().getParcelable(KEY_GAME_RESULT, GameResult::class.java)
         } else {
-            requireArguments().getSerializable(KEY_GAME_RESULT) as? GameResult
+            requireArguments().getParcelable(KEY_GAME_RESULT) as? GameResult
         } ?: throw RuntimeException("GameResult is null")
     }
 
@@ -72,7 +76,7 @@ class GameFinishedFragment : Fragment() {
         fun newInstance(gameResult: GameResult): GameFinishedFragment {
             return GameFinishedFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(KEY_GAME_RESULT, gameResult)
+                    putParcelable(KEY_GAME_RESULT, gameResult)
                 }
             }
         }

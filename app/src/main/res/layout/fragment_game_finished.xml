@@ -54,7 +54,7 @@
         android:textSize="@dimen/text_size_18sp" />
 
     <Button
-        android:id="@+id/continueButton"
+        android:id="@+id/retryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16dp"
