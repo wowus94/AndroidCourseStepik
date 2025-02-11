@@ -5,4 +5,7 @@
     <color name="blue">#2196F3</color>
     <color name="shop_item_enabled_color">#6750A3</color>
     <color name="shop_item_disabled_color">#4D6750A3</color>
+    <color name="background_color">#7FCDF76F</color>
+    <color name="main_color">#673AB7</color>
+    <color name="question_background_color">#992667</color>
 </resources>

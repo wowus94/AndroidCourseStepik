@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameFinishedFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".the_number.presentation.fragments.GameFinishedFragment">
+
+    <ImageView
+        android:layout_width="@dimen/image_view_size_150dp"
+        android:layout_height="@dimen/image_view_size_150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_40dp"
+        android:layout_weight="1"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_smiling" />
+
+    <TextView
+        android:id="@+id/tv_required_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_80dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="@string/required_score"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <TextView
+        android:id="@+id/tv_score_answers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="@string/score_answers"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <TextView
+        android:id="@+id/tv_required_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="@string/required_percentage"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <TextView
+        android:id="@+id/tv_score_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_80dp"
+        android:text="@string/score_percentage"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_80dp"
+        android:text="@string/retry" />
+
+</LinearLayout>

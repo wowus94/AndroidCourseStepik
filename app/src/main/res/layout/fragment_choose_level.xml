@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chooseLevelFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".the_number.presentation.fragments.ChooseLevelFragment">
+
+    <ImageView
+        android:layout_width="@dimen/image_view_size_150dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/ic_choose_level" />
+
+    <TextView
+        style="@style/TitleTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="@string/choose_level" />
+
+    <Button
+        android:id="@+id/testLevelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="@string/test_level"
+        android:textSize="@dimen/text_button_size_16sp" />
+
+    <Button
+        android:id="@+id/easyLevelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:text="@string/easy_level"
+        android:textSize="@dimen/text_button_size_16sp" />
+
+    <Button
+        android:id="@+id/normalLevelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="@string/normal_level"
+        android:textSize="@dimen/text_button_size_16sp" />
+
+    <Button
+        android:id="@+id/hardLevelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_80dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/hard_level"
+        android:textSize="@dimen/text_button_size_16sp" />
+
+</LinearLayout>
