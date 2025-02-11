@@ -5,19 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.vlyashuk.androidcoursestepik.databinding.FragmentWelcomeBinding
+import ru.vlyashuk.androidcoursestepik.databinding.FragmentGameBinding
 
-class WelcomeFragment : Fragment() {
+class GameFragment : Fragment() {
 
-    private var _binding: FragmentWelcomeBinding? = null
-    private val binding: FragmentWelcomeBinding
-        get() = _binding ?: throw RuntimeException("FragmentWelcomeBinding == null")
+    private var _binding: FragmentGameBinding? = null
+    private val binding: FragmentGameBinding
+        get() = _binding ?: throw RuntimeException("FragmentGameBinding == null")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentGameBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -25,5 +25,4 @@ class WelcomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

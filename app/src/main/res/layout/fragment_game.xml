@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".the_number.presentation.fragments.GameFragment">
+
+    <TextView
+        android:id="@+id/timerTextView"
+        style="@style/TitleTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+    <TextView
+        android:id="@+id/sumTextView"
+        style="@style/QuestionTextViewStyle"
+        android:layout_width="@dimen/image_view_size_150dp"
+        android:layout_height="@dimen/image_view_size_150dp"
+        android:layout_marginTop="@dimen/margin_80dp"
+        android:background="@drawable/circle_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timerTextView"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/leftNumberTextView"
+        style="@style/QuestionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:background="@color/question_background_color"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/questionTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sumTextView"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/questionTextView"
+        style="@style/QuestionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:background="@color/question_background_color"
+        android:text="@string/question_mark"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftNumberTextView"
+        app:layout_constraintTop_toBottomOf="@id/sumTextView" />
+
+    <TextView
+        android:id="@+id/answersProgressTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="@string/progress_answers"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/leftNumberTextView" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:max="100"
+        android:secondaryProgressTint="@color/main_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answersProgressTextView" />
+
+    <TextView
+        android:id="@+id/optionOneTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintBottom_toTopOf="@id/optionFourTextView"
+        app:layout_constraintEnd_toStartOf="@id/optionFiveTextView"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/optionTwoTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toTopOf="@id/optionFourTextView"
+        app:layout_constraintEnd_toStartOf="@id/optionSixTextView"
+        app:layout_constraintStart_toEndOf="@id/optionFourTextView"
+        tools:text="2" />
+
+    <TextView
+        android:id="@+id/optionThreeTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple"
+        app:layout_constraintBottom_toTopOf="@id/optionFourTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/optionFiveTextView"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/optionFourTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/optionFiveTextView"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="4" />
+
+    <TextView
+        android:id="@+id/optionFiveTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/optionSixTextView"
+        app:layout_constraintStart_toEndOf="@id/optionFourTextView"
+        tools:text="5" />
+
+    <TextView
+        android:id="@+id/optionSixTextView"
+        style="@style/OptionTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/optionFiveTextView"
+        tools:text="6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

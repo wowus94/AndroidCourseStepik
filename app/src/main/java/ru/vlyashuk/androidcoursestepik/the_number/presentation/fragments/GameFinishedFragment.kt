@@ -5,19 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.vlyashuk.androidcoursestepik.databinding.FragmentWelcomeBinding
+import ru.vlyashuk.androidcoursestepik.databinding.FragmentGameFinishedBinding
 
-class WelcomeFragment : Fragment() {
 
-    private var _binding: FragmentWelcomeBinding? = null
-    private val binding: FragmentWelcomeBinding
-        get() = _binding ?: throw RuntimeException("FragmentWelcomeBinding == null")
+class GameFinishedFragment : Fragment() {
+
+    private var _binding: FragmentGameFinishedBinding? = null
+    private val binding: FragmentGameFinishedBinding
+        get() = _binding ?: throw RuntimeException("FragmentGameFinishedBinding == null")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentGameFinishedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
