@@ -19,7 +19,7 @@ object GameRepositoryImpl : GameRepository {
         val options = HashSet<Int>()
         val rightAnswer = sum - visibleNumber
         options.add(rightAnswer)
-        val from = max(maxSumValue - countOfOptions, MIN_ANSWER_VALUE)
+        val from = max(rightAnswer - countOfOptions, MIN_ANSWER_VALUE)
         val to = min(maxSumValue, rightAnswer + countOfOptions)
         while (options.size < countOfOptions) {
             options.add(Random.nextInt(from, to))
