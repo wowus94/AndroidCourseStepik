@@ -8,6 +8,7 @@
 - реализована GameViewModel
 - доделана логика экрана GameFragment
 - доделана логика экрана GameFinishedFragment
+- добавлена ViewModelFactory
 
 # 10.02.2025
 - создание структуры папок для приложения "Состав числа"

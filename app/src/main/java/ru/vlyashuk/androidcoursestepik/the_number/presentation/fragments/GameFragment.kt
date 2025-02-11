@@ -9,17 +9,23 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentGameBinding
 import ru.vlyashuk.androidcoursestepik.the_number.domain.entity.GameResult
 import ru.vlyashuk.androidcoursestepik.the_number.domain.entity.Level
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModel
+import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModelFactory
 
 class GameFragment : Fragment() {
 
     private lateinit var level: Level
-    private val gameViewModel: GameViewModel by viewModels()
+    private val viewModelFactory by lazy {
+        GameViewModelFactory(level, requireActivity().application)
+    }
+    private val gameViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[GameViewModel::class.java]
+    }
 
     private val optionsTextView by lazy {
         mutableListOf<TextView>().apply {
@@ -53,7 +59,6 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         setClickListenersToOptions()
-        gameViewModel.startGame(level)
     }
 
     private fun setClickListenersToOptions() {
