@@ -15,7 +15,6 @@ import ru.vlyashuk.androidcoursestepik.databinding.FragmentGameBinding
 import ru.vlyashuk.androidcoursestepik.the_number.domain.entity.GameResult
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModel
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModelFactory
-import ru.vlyashuk.androidcoursestepik.the_number.presentation.fragments.GameFragmentDirections
 
 class GameFragment : Fragment() {
 
