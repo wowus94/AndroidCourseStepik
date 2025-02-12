@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -43,6 +44,15 @@ android {
 }
 
 dependencies {
+
+    //ViewModel
+    implementation(libs.viewModel)
+    //Room
+    implementation(libs.room)
+    // Кодогенератор Room
+    ksp(libs.room.compiler)
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation(libs.room.ktx)
 
     //Navigation
     implementation(libs.navigation.fragment)

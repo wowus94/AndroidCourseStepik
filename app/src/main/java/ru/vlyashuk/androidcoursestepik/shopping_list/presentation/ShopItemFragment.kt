@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputLayout
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentShopItemBinding
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ShopItemViewModel
 
 class ShopItemFragment : Fragment() {
 
