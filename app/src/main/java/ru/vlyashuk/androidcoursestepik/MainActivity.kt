@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShoppingListActivity
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.MainNumberActivity
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
 
             theNumber.setOnClickListener {
                 val navigate = Intent(this@MainActivity, MainNumberActivity::class.java)
+                startActivity(navigate)
+            }
+
+            coroutineApp.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainCoroutineActivity::class.java)
                 startActivity(navigate)
             }
         }

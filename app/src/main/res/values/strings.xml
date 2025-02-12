@@ -29,4 +29,11 @@
     <string name="right_answers">Правильных ответов %d из %d необходимых</string>
     <string name="required_percentage">Необходимый процент правильных ответов: %d</string>
     <string name="required_score">Необходимое количество правильных ответов: %d</string>
+
+    <!--    Корутины-->
+    <string name="coroutine">Корутины</string>
+    <string name="download">Загрузить</string>
+    <string name="city">Город:</string>
+    <string name="temperature">Температура:</string>
+    <string name="loading_temperature_toast">Загрузка температуры для города: %s</string>
 </resources>
