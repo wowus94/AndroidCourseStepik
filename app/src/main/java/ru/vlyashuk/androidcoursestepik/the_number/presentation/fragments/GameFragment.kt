@@ -1,7 +1,6 @@
 package ru.vlyashuk.androidcoursestepik.the_number.presentation.fragments
 
 import android.content.res.ColorStateList
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,18 +9,20 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ru.vlyashuk.androidcoursestepik.R
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentGameBinding
 import ru.vlyashuk.androidcoursestepik.the_number.domain.entity.GameResult
-import ru.vlyashuk.androidcoursestepik.the_number.domain.entity.Level
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModel
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.GameViewModelFactory
+import ru.vlyashuk.androidcoursestepik.the_number.presentation.fragments.GameFragmentDirections
 
 class GameFragment : Fragment() {
 
-    private lateinit var level: Level
+    private val args by navArgs<GameFragmentArgs>()
+
     private val viewModelFactory by lazy {
-        GameViewModelFactory(level, requireActivity().application)
+        GameViewModelFactory(args.level, requireActivity().application)
     }
     private val gameViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[GameViewModel::class.java]
@@ -41,11 +42,6 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding: FragmentGameBinding
         get() = _binding ?: throw RuntimeException("FragmentGameBinding == null")
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        parseArgs()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -115,37 +111,15 @@ class GameFragment : Fragment() {
     }
 
     private fun launchGameFinishedFragment(gameResult: GameResult) {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerTheNumber, GameFinishedFragment.newInstance(gameResult))
-            .addToBackStack(null)
-            .commit()
+        findNavController().navigate(
+            GameFragmentDirections.actionGameFragmentToGameFinishedFragment(
+                gameResult
+            )
+        )
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun parseArgs() {
-        level = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
-            requireArguments().getParcelable(KEY_LEVEL, Level::class.java)
-        } else {
-            requireArguments().getParcelable(KEY_LEVEL) as? Level
-        } ?: throw RuntimeException("Level is null")
-    }
-
-    companion object {
-
-        const val NAME_GAME_FRAGMENT = "GameFragment"
-        private const val KEY_LEVEL = "level"
-
-        fun newInstance(level: Level): GameFragment {
-            return GameFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(KEY_LEVEL, level)
-                }
-            }
-        }
-
     }
 }
