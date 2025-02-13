@@ -21,16 +21,22 @@ class TestJobService : JobService() {
 
     override fun onStartJob(params: JobParameters?): Boolean {
         scope.launch {
-            for (i in 0 until 5) {
-                delay(2000)
-                showToast((i + 1).toString())
+            var workItem = params?.dequeueWork()
+            while (workItem != null) {
+                val page = workItem.intent?.getIntExtra(PAGE, 0)
+                for (i in 0 until 5) {
+                    delay(1000)
+                    println("Страница: $page #${i + 1} ")
+                }
+                params?.completeWork(workItem)
+                workItem = params?.dequeueWork()
             }
-            jobFinished(params, true)
         }
         return true
     }
 
     override fun onStopJob(params: JobParameters?): Boolean {
+        println("onStopJob")
         return true
     }
 
@@ -50,6 +56,15 @@ class TestJobService : JobService() {
     companion object {
 
         const val JOB_ID = 101
+        private const val PAGE = "page"
+
+        fun newIntent(page: Int): Intent {
+            return Intent().apply {
+                putExtra(PAGE, page)
+            }
+        }
+
+
     }
 
 }
