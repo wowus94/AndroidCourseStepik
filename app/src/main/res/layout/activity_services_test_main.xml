@@ -60,18 +60,18 @@
         android:text="@string/job_scheduler" />
 
     <Button
-        android:id="@+id/job_intent_service"
-        style="@style/ServiceButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/job_intent_service" />
-
-    <Button
         android:id="@+id/alarm_manager"
         style="@style/ServiceButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="@string/alarm_manager" />
+
+    <TextView
+        style="@style/DescriptionTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Каждые 2 секунды внизу экрана будет появляться уведомление если устройство заряжается:" />
 
     <Button
         android:id="@+id/work_manager"

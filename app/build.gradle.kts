@@ -45,6 +45,9 @@ android {
 
 dependencies {
 
+    //WorkManager
+    implementation(libs.work.manager)
+
     //ViewModel
     implementation(libs.viewModel)
     //Room

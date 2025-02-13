@@ -26,7 +26,7 @@ class TestJobService : JobService() {
                 val page = workItem.intent?.getIntExtra(PAGE, 0)
                 for (i in 0 until 5) {
                     delay(1000)
-                    println("Страница: $page #${i + 1} ")
+                    showToast("Страница: $page #${i + 1} ")
                 }
                 params?.completeWork(workItem)
                 workItem = params?.dequeueWork()
