@@ -1,5 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.services_test_app
 
+import android.app.job.JobInfo
+import android.app.job.JobScheduler
+import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -35,6 +38,19 @@ class ServicesTestMainActivity : AppCompatActivity() {
                     this@ServicesTestMainActivity,
                     TestIntentService.newIntent(this@ServicesTestMainActivity)
                 )
+            }
+
+            jobScheduler.setOnClickListener {
+                val componentName =
+                    ComponentName(this@ServicesTestMainActivity, TestJobService::class.java)
+
+                val jobInfo = JobInfo.Builder(TestJobService.JOB_ID, componentName)
+                    .setRequiresCharging(true)
+                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                    .build()
+
+                val jobScheduler = getSystemService(JOB_SCHEDULER_SERVICE) as JobScheduler
+                jobScheduler.schedule(jobInfo)
             }
 
         }

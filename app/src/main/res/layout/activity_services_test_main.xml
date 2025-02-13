@@ -46,6 +46,12 @@
         android:layout_height="wrap_content"
         android:text="@string/intent_service" />
 
+    <TextView
+        style="@style/DescriptionTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Каждые 2 секунды внизу экрана будет появляться уведомление если на устройстве включен Wi-Fi и оно заряжается:" />
+
     <Button
         android:id="@+id/job_scheduler"
         style="@style/ServiceButtonStyle"
