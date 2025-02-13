@@ -22,9 +22,14 @@
             android:enabled="true"
             android:exported="false" />
         <service
+            android:name=".services_test_app.TestIntentService"
+            android:foregroundServiceType="dataSync"
+            android:enabled="true"
+            android:exported="false" />
+        <service
             android:name=".services_test_app.TestBackgroundService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".services_test_app.ServicesTestMainActivity"
