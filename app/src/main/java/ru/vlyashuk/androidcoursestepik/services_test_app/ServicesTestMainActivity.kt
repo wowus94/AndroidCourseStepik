@@ -2,6 +2,7 @@ package ru.vlyashuk.androidcoursestepik.services_test_app
 
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
+import android.app.job.JobWorkItem
 import android.content.ComponentName
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -18,6 +19,8 @@ class ServicesTestMainActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityServicesTestMainBinding.inflate(layoutInflater)
     }
+
+    private var page = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +53,8 @@ class ServicesTestMainActivity : AppCompatActivity() {
                     .build()
 
                 val jobScheduler = getSystemService(JOB_SCHEDULER_SERVICE) as JobScheduler
-                jobScheduler.schedule(jobInfo)
+                val intent = TestJobService.newIntent(page++)
+                jobScheduler.enqueue(jobInfo, JobWorkItem(intent))
             }
 
         }
