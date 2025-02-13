@@ -4,6 +4,7 @@
 - добавление корутин в "Список покупок"
 - добавлено приложение для тестирования Service
 - добавлены примеры Background и Foreground Service
+- тестирование Intent Service
 
 # 12.02.2025
 - переход на Jetpack Navigation
