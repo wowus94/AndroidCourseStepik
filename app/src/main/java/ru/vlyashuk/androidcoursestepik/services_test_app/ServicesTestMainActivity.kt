@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkManager
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityServicesTestMainBinding
 
 class ServicesTestMainActivity : AppCompatActivity() {
@@ -57,8 +59,15 @@ class ServicesTestMainActivity : AppCompatActivity() {
                 jobScheduler.enqueue(jobInfo, JobWorkItem(intent))
             }
 
+            workManager.setOnClickListener {
+                val workManager = WorkManager.getInstance(applicationContext)
+                workManager.enqueueUniqueWork(
+                    TestWorker.WORK_NAME,
+                    ExistingWorkPolicy.APPEND,
+                    TestWorker.makeRequest(page++)
+                )
+            }
         }
-
     }
 
     private fun checkAndRequestNotificationPermission() {

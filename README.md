@@ -7,6 +7,7 @@
 - тестирование Intent Service
 - добавлен пример Job Service
 - настройка Job Scheduler
+- настройка Work Manager
 
 # 12.02.2025
 - переход на Jetpack Navigation
