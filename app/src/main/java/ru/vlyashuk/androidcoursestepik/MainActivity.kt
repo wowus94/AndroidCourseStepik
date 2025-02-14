@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
+import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.MainCryptoAppActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
 import ru.vlyashuk.androidcoursestepik.services_test_app.ServicesTestMainActivity
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShoppingListActivity
@@ -48,8 +49,11 @@ class MainActivity : AppCompatActivity() {
                 val navigate = Intent(this@MainActivity, ServicesTestMainActivity::class.java)
                 startActivity(navigate)
             }
+
+            cryptoApp.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainCryptoAppActivity::class.java)
+                startActivity(navigate)
+            }
         }
-
-
     }
 }
