@@ -1,6 +1,11 @@
-package ru.vlyashuk.androidcoursestepik.crypto_app.domain
+package ru.vlyashuk.androidcoursestepik.crypto_app.data.database
 
-data class CoinInfo(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "full_price_list")
+data class CoinInfoDbModel(
+    @PrimaryKey
     val fromSymbol: String,
     val toSymbol: String?,
     val price: String?,
