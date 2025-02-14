@@ -11,6 +11,7 @@
     <string name="error_input_count">Ошибка ввода количества</string>
     <string name="edit_item_saved">Изменения сохранены</string>
     <string name="add_new_item">Новый элемент добавлен</string>
+    <string name="description_shopping_app">Приложение для добавления покупок в список. Можно удалять, изменять состояние и редактировать покупку.</string>
 
     <!--    Состав числа-->
     <string name="the_number">Состав числа</string>
@@ -29,6 +30,7 @@
     <string name="right_answers">Правильных ответов %d из %d необходимых</string>
     <string name="required_percentage">Необходимый процент правильных ответов: %d</string>
     <string name="required_score">Необходимое количество правильных ответов: %d</string>
+    <string name="description_the_number_app">Приложение-игра. Дается результат суммы чисел и одно из слагаемых. Нужно выбрать из предложенных вариантов второе слагаемое.</string>
 
     <!--    Корутины-->
     <string name="coroutine">Корутины</string>
@@ -36,6 +38,7 @@
     <string name="city">Город:</string>
     <string name="temperature">Температура:</string>
     <string name="loading_temperature_toast">Загрузка температуры для города: %s</string>
+    <string name="description_coroutine_app">Тестовое приложение. По клику кнопки симулирует загрузку данных в фоне.</string>
 
     <!--    Сервисы-->
     <string name="services">Сервисы</string>
@@ -46,6 +49,7 @@
     <string name="job_intent_service">Job Intent Service</string>
     <string name="alarm_manager">Alarm Manager</string>
     <string name="work_manager">Work Manager</string>
+    <string name="description_service_app">Набор реализаций отображения различных сервисов.</string>
 
     <!--    Crypto App-->
     <string name="crypto">Криптовалюты</string>
@@ -57,4 +61,5 @@
     <string name="max_price_label">Максимум за день:</string>
     <string name="last_market_label">Последняя сделка:</string>
     <string name="last_updated_label">Обновлено:</string>
+    <string name="description_crypto_app">Приложение отображает курс различных криптовалют. Список обновляется каждые 10 секунд. По клику на валюту открывается окно детальной информации о валюте, так же с обновлением раз в 10 секунд.</string>
 </resources>

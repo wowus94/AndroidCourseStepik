@@ -8,5 +8,6 @@
     <color name="background_color">#7FCDF76F</color>
     <color name="main_color">#673AB7</color>
     <color name="question_background_color">#992667</color>
-    <color name="background_color_gray">#DEE1E2</color>
+    <color name="background_color_gray">#000000</color>
+    <color name="background_color_light_gray">#80DEE1E2</color>
 </resources>

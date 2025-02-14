@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -17,75 +16,76 @@
         android:text="@string/select_app"
         android:textColor="@color/black"
         android:textSize="@dimen/title_text_size_18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/shoppingList"
+        style="@style/NameTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:background="@color/background_color_gray"
-        android:padding="@dimen/padding_8dp"
-        android:text="@string/shopping_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/shopping_list" />
+
+    <TextView
+        android:id="@+id/descriptionShoppingList"
+        style="@style/DescriptionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_shopping_app" />
 
     <TextView
         android:id="@+id/theNumber"
+        style="@style/NameTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:background="@color/background_color_gray"
-        android:padding="@dimen/padding_8dp"
-        android:text="@string/the_number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/the_number" />
+
+    <TextView
+        android:id="@+id/descriptionTheNumberApp"
+        style="@style/DescriptionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_the_number_app" />
 
     <TextView
         android:id="@+id/coroutineApp"
+        style="@style/NameTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:background="@color/background_color_gray"
-        android:padding="@dimen/padding_8dp"
-        android:text="@string/coroutine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/coroutine" />
+
+    <TextView
+        android:id="@+id/descriptionCoroutineApp"
+        style="@style/DescriptionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_coroutine_app" />
 
     <TextView
         android:id="@+id/servicesTestApp"
+        style="@style/NameTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:background="@color/background_color_gray"
-        android:padding="@dimen/padding_8dp"
-        android:text="@string/services"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/services" />
+
+    <TextView
+        android:id="@+id/descriptionServiceApp"
+        style="@style/DescriptionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_service_app" />
 
     <TextView
         android:id="@+id/cryptoApp"
+        style="@style/NameTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_8dp"
-        android:background="@color/background_color_gray"
-        android:padding="@dimen/padding_8dp"
-        android:text="@string/crypto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/crypto" />
+
+    <TextView
+        android:id="@+id/descriptionCryptoApp"
+        style="@style/DescriptionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/description_crypto_app" />
 
 </LinearLayout>
