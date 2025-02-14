@@ -46,4 +46,7 @@
     <string name="job_intent_service">Job Intent Service</string>
     <string name="alarm_manager">Alarm Manager</string>
     <string name="work_manager">Work Manager</string>
+
+    <!--    Crypto App-->
+    <string name="crypto">Криптовалюты</string>
 </resources>
