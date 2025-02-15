@@ -62,4 +62,8 @@
     <string name="last_market_label">Последняя сделка:</string>
     <string name="last_updated_label">Обновлено:</string>
     <string name="description_crypto_app">Приложение отображает курс различных криптовалют. Список обновляется каждые 10 секунд. По клику на валюту открывается окно детальной информации о валюте, так же с обновлением раз в 10 секунд.</string>
+
+    <!--Dagger2-->
+    <string name="dagger2">Dagger2</string>
+    <string name="description_dagger2_app">Приложение для изучения Dagger2.</string>
 </resources>

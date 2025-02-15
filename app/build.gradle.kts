@@ -45,12 +45,17 @@ android {
 
 dependencies {
 
+    //Dagger2
+    implementation(libs.dagger2)
+    ksp(libs.dagger2.compiler)
+    ksp(libs.dagger2.android.processor)
+
     //Picasso
-    implementation (libs.squareup.picasso)
+    implementation(libs.squareup.picasso)
 
     //Retrofit
     implementation(libs.retrofit)
-    implementation (libs.converter.gson)
+    implementation(libs.converter.gson)
 
     //GSON
     implementation(libs.gson)
