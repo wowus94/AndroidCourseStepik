@@ -5,10 +5,7 @@ import javax.inject.Inject
 class Activity {
 
     @Inject
-    lateinit var keyboard: Keyboard
-
-    val monitor: Monitor = DaggerNewComponent.create().getMonitor()
-    val mouse: Mouse = DaggerNewComponent.create().getMouse()
+    lateinit var computer: Computer
 
     init {
         DaggerNewComponent.create().inject(this)

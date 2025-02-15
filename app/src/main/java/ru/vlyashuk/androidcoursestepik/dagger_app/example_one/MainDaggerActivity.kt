@@ -10,8 +10,6 @@ class MainDaggerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_dagger)
         val activity = Activity()
-        activity.mouse.toString()
-        activity.monitor.toString()
-        activity.keyboard.toString()
+        activity.computer.toString()
     }
 }
