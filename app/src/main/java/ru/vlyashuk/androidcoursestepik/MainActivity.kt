@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinPriceListActivity
+import ru.vlyashuk.androidcoursestepik.dagger_app.example_one.MainDaggerActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
 import ru.vlyashuk.androidcoursestepik.services_test_app.ServicesTestMainActivity
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShoppingListActivity
@@ -54,6 +55,12 @@ class MainActivity : AppCompatActivity() {
                 val navigate = Intent(this@MainActivity, CoinPriceListActivity::class.java)
                 startActivity(navigate)
             }
+
+            dagger2App.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainDaggerActivity::class.java)
+                startActivity(navigate)
+            }
+
         }
     }
 }
