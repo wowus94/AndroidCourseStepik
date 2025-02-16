@@ -4,8 +4,9 @@ import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.Ex
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.ExampleRemoteDataSource
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.mapper.ExampleMapper
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.domain.ExampleRepository
+import javax.inject.Inject
 
-class ExampleRepositoryImpl(
+class ExampleRepositoryImpl @Inject constructor(
     private val localDataSource: ExampleLocalDataSource,
     private val remoteDataSource: ExampleRemoteDataSource,
     private val mapper: ExampleMapper

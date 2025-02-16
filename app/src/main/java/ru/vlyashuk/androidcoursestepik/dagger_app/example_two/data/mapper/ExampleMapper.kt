@@ -1,6 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.mapper
 
-class ExampleMapper {
+import javax.inject.Inject
+
+class ExampleMapper @Inject constructor() {
 
     fun map() {
 

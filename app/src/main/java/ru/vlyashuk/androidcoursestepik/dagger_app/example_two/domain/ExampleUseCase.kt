@@ -1,6 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.dagger_app.example_two.domain
 
-class ExampleUseCase(
+import javax.inject.Inject
+
+class ExampleUseCase @Inject constructor(
     private val repository: ExampleRepository
 ) {
 
