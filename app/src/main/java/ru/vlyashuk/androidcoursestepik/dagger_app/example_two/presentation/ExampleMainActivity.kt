@@ -3,15 +3,19 @@ package ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.vlyashuk.androidcoursestepik.R
+import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.di.ContextModule
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.di.DaggerApplicationComponent
 import javax.inject.Inject
 
 class ExampleMainActivity : AppCompatActivity() {
+    private val component by lazy {
+        DaggerApplicationComponent.builder()
+            .contextModule(ContextModule(application))
+            .build()
+    }
 
     @Inject
     lateinit var viewModel: ExampleViewModel
-
-    private val component = DaggerApplicationComponent.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
