@@ -5,6 +5,7 @@
 - практика Factory и Singleton
 - практика Custom Scopes
 - Inject ViewModel
+- переход на ViewModelKey
 
 # 16.02.2025
 - практика Binds Dagger2

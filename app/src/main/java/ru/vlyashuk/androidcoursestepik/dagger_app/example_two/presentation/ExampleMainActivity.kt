@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.ExampleApp
-import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.di.ViewModelFactory
 import javax.inject.Inject
 
 class ExampleMainActivity : AppCompatActivity() {
