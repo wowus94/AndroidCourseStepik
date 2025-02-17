@@ -6,7 +6,7 @@ import dagger.Component
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.ExampleMainActivity
 
 @ApplicationScope
-@Component(modules = [DataModule::class, DomainModule::class])
+@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
     fun inject(activity: ExampleMainActivity)
