@@ -10,11 +10,13 @@ import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.Ex
 @Module
 interface DataModule {
 
+    @ApplicationScope
     @Binds
     fun bindLocalDataSource(
         implLocal: ExampleLocalDataSourceImpl
     ): ExampleLocalDataSource
 
+    @ApplicationScope
     @Binds
     fun bindRemoteDataSource(
         implRemote: ExampleRemoteDataSourceImpl

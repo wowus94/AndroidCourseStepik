@@ -4,9 +4,8 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.ExampleMainActivity
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 

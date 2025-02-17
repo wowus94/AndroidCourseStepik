@@ -3,6 +3,7 @@
 # 17.02.2025
 - практика Custom Builder, BindsInstance
 - практика Factory и Singleton
+- практика Custom Scopes
 
 # 16.02.2025
 - практика Binds Dagger2
