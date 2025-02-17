@@ -6,6 +6,7 @@
 - практика Custom Scopes
 - Inject ViewModel
 - переход на ViewModelKey
+- добавление Subcomponents
 
 # 16.02.2025
 - практика Binds Dagger2
