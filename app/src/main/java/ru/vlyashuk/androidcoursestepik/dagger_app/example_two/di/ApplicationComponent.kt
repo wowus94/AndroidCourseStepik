@@ -4,7 +4,9 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.ExampleMainActivity
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
@@ -18,6 +20,4 @@ interface ApplicationComponent {
             @BindsInstance timeMillis: Long
         ): ApplicationComponent
     }
-
-
 }
