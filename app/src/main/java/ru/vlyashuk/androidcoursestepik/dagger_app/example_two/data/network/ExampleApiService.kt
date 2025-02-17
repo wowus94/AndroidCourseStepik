@@ -6,11 +6,12 @@ import ru.vlyashuk.androidcoursestepik.R
 import javax.inject.Inject
 
 class ExampleApiService @Inject constructor(
-    private val context: Context
+    private val context: Context,
+    private val timeMillis: Long
 ) {
 
     fun method() {
-        Log.i(LOG_TAG, "ExampleApiService ${context.getString(R.string.dagger2)}")
+        Log.i(LOG_TAG, "ExampleApiService ${context.getString(R.string.dagger2)} $timeMillis")
     }
 
     companion object {
