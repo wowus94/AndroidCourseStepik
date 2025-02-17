@@ -1,6 +1,9 @@
 package ru.vlyashuk.androidcoursestepik.crypto_app.domain
 
-class GetCoinInfoListUseCase(private val repository: CoinRepository) {
+import javax.inject.Inject
+
+class GetCoinInfoListUseCase @Inject constructor
+    (private val repository: CoinRepository) {
 
     operator fun invoke() = repository.getCoinInfoList()
 }
