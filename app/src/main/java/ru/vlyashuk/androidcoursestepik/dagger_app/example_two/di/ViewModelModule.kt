@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import dagger.multibindings.StringKey
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.ExampleViewModel
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.ExampleViewModelTwo
 
@@ -12,12 +11,12 @@ import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.presentation.Examp
 interface ViewModelModule {
 
     @IntoMap
-    @StringKey("ExampleViewModel")
+    @ViewModelKey(ExampleViewModel::class)
     @Binds
     fun bindExampleViewModel(impl: ExampleViewModel): ViewModel
 
     @IntoMap
-    @StringKey("ExampleViewModel2")
+    @ViewModelKey(ExampleViewModelTwo::class)
     @Binds
-    fun bindExampleViewModel2(impl: ExampleViewModelTwo): ViewModel
+    fun bindExampleViewModelTwo(impl: ExampleViewModelTwo): ViewModel
 }

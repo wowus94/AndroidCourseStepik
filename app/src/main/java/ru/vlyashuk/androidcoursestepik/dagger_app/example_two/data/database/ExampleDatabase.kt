@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import ru.vlyashuk.androidcoursestepik.R
 import javax.inject.Inject
-import javax.inject.Singleton
 
 class ExampleDatabase @Inject constructor(
     private val context: Context,
