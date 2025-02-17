@@ -7,6 +7,7 @@
 - Inject ViewModel
 - переход на ViewModelKey
 - добавление Subcomponents
+- использование Qualifiers
 
 # 16.02.2025
 - практика Binds Dagger2
