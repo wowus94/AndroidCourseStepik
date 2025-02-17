@@ -6,6 +6,7 @@ import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.Ex
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.ExampleLocalDataSourceImpl
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.ExampleRemoteDataSource
 import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.ExampleRemoteDataSourceImpl
+import ru.vlyashuk.androidcoursestepik.dagger_app.example_two.data.datasource.TestRemoteDataSourceImpl
 
 @Module
 interface DataModule {
@@ -16,9 +17,17 @@ interface DataModule {
         implLocal: ExampleLocalDataSourceImpl
     ): ExampleLocalDataSource
 
+    @ProdQualifier
     @ApplicationScope
     @Binds
     fun bindRemoteDataSource(
         implRemote: ExampleRemoteDataSourceImpl
+    ): ExampleRemoteDataSource
+
+    @TestQualifier
+    @ApplicationScope
+    @Binds
+    fun bindTestRemoteDataSource(
+        implRemote: TestRemoteDataSourceImpl
     ): ExampleRemoteDataSource
 }
