@@ -1,6 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.crypto_app.domain
 
-class LoadDataUseCase(
+import javax.inject.Inject
+
+class LoadDataUseCase @Inject constructor(
     private val repository: CoinRepository
 ) {
 

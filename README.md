@@ -8,6 +8,7 @@
 - переход на ViewModelKey
 - добавление Subcomponents
 - использование Qualifiers
+- подключение Dagger 2 в приложение "Криптовалюты"
 
 # 16.02.2025
 - практика Binds Dagger2

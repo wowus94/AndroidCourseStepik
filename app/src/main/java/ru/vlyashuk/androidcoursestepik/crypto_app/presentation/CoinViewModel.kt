@@ -2,18 +2,17 @@ package ru.vlyashuk.androidcoursestepik.crypto_app.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.cryptoapp.data.repository.CoinRepositoryImpl
+import androidx.lifecycle.ViewModel
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.GetCoinInfoListUseCase
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.GetCoinInfoUseCase
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.LoadDataUseCase
+import javax.inject.Inject
 
-class CoinViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = CoinRepositoryImpl(application)
-
-    private val getCoinInfoListUseCase = GetCoinInfoListUseCase(repository)
-    private val getCoinInfoUseCase = GetCoinInfoUseCase(repository)
-    private val loadDataUseCase = LoadDataUseCase(repository)
+class CoinViewModel @Inject constructor(
+    private val getCoinInfoListUseCase: GetCoinInfoListUseCase,
+    private val getCoinInfoUseCase: GetCoinInfoUseCase,
+    private val loadDataUseCase: LoadDataUseCase,
+) : ViewModel() {
 
     val coinInfoList = getCoinInfoListUseCase()
 

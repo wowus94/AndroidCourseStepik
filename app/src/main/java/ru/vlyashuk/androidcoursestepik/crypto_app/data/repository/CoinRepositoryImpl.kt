@@ -1,4 +1,4 @@
-package com.example.cryptoapp.data.repository
+package ru.vlyashuk.androidcoursestepik.crypto_app.data.repository
 
 
 import android.app.Application
@@ -7,18 +7,18 @@ import androidx.lifecycle.map
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import ru.vlyashuk.androidcoursestepik.crypto_app.data.database.AppDatabase
+import ru.vlyashuk.androidcoursestepik.crypto_app.data.database.CoinInfoDao
 import ru.vlyashuk.androidcoursestepik.crypto_app.data.mapper.CoinMapper
 import ru.vlyashuk.androidcoursestepik.crypto_app.data.workers.RefreshDataWorker
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.CoinInfo
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.CoinRepository
+import javax.inject.Inject
 
-class CoinRepositoryImpl(
+class CoinRepositoryImpl @Inject constructor(
+    private val mapper: CoinMapper,
+    private val coinInfoDao: CoinInfoDao,
     private val application: Application
 ) : CoinRepository {
-
-    private val coinInfoDao = AppDatabase.getInstance(application).coinPriceInfoDao()
-
-    private val mapper = CoinMapper()
 
     override fun getCoinInfoList(): LiveData<List<CoinInfo>> =
         coinInfoDao.getPriceList().map {
