@@ -6,6 +6,7 @@
 - добавление Dagger2 в приложение "Список покупок"
 - добавление приложения для теста BroadcastReceiver
 - практика работы с BroadcastReceiver
+- практика Content Providers в приложении "Список покупок"
 
 # 17.02.2025
 - практика Custom Builder, BindsInstance

@@ -1,6 +1,7 @@
 package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -54,6 +55,15 @@ class ShoppingListActivity : AppCompatActivity(),
                 )
             }
         }
+
+        contentResolver.query(
+            Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
+            null,
+            null,
+            null,
+            null,
+            null
+        )
 
     }
 
