@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityShoppingListBinding
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.adapters.ShopListRecyclerViewAdapter
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.MainViewModel
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ViewModelFactoryShoppingList
+import javax.inject.Inject
 
 class ShoppingListActivity : AppCompatActivity(),
     ShopItemFragment.OnShopItemEditingFinishedListener {
@@ -20,14 +23,23 @@ class ShoppingListActivity : AppCompatActivity(),
     private lateinit var mainViewModel: MainViewModel
     private lateinit var shopListAdapter: ShopListRecyclerViewAdapter
 
+    @Inject
+    lateinit var viewModelFactoryShoppingList: ViewModelFactoryShoppingList
+
+    private val component by lazy {
+        (application as MainApp).componentShoppingList
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
         super.onCreate(savedInstanceState)
         binding = ActivityShoppingListBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         setupRecyclerViewAdapter()
-        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        mainViewModel =
+            ViewModelProvider(this, viewModelFactoryShoppingList)[MainViewModel::class.java]
         mainViewModel.shopList.observe(this) {
             shopListAdapter.submitList(it)
         }

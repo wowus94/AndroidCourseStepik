@@ -1,8 +1,9 @@
 package ru.vlyashuk.androidcoursestepik.shopping_list.data
 
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
+import javax.inject.Inject
 
-class ShopListMapper {
+class ShopListMapper @Inject constructor() {
 
     fun mapEntityToDbModel(shopItem: ShopItem) = ShopItemDbModel(
         id = shopItem.id,

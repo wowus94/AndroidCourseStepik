@@ -1,8 +1,12 @@
 package ru.vlyashuk.androidcoursestepik.shopping_list.domain
 
-class AddShopItemUseCase(private val shopListRepository: ShopListRepository) {
+import javax.inject.Inject
 
-   suspend fun addShopItem(shopItem: ShopItem) {
+class AddShopItemUseCase @Inject constructor(
+    private val shopListRepository: ShopListRepository
+) {
+
+    suspend fun addShopItem(shopItem: ShopItem) {
         shopListRepository.addShopItem(shopItem)
     }
 }

@@ -3,7 +3,7 @@ package ru.vlyashuk.androidcoursestepik.crypto_app.di
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
-import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinApp
+import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinDetailFragment
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinPriceListActivity
 
@@ -21,7 +21,7 @@ interface ApplicationComponent {
 
     fun inject(fragment: CoinDetailFragment)
 
-    fun inject(application: CoinApp)
+    fun inject(application: MainApp)
 
     @Component.Factory
     interface Factory {

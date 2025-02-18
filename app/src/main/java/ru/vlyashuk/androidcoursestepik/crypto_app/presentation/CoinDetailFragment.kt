@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.squareup.picasso.Picasso
+import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentCoinDetailBinding
 import javax.inject.Inject
 
@@ -22,7 +23,7 @@ class CoinDetailFragment : Fragment() {
 
 
     private val component by lazy {
-        (requireActivity().application as CoinApp).component
+        (requireActivity().application as MainApp).component
     }
     private lateinit var viewModel: CoinViewModel
 

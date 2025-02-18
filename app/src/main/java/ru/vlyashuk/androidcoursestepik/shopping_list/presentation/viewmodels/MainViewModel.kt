@@ -2,6 +2,7 @@ package ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,15 +13,14 @@ import ru.vlyashuk.androidcoursestepik.shopping_list.domain.DeleteShopItemUseCas
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.EditShopItemUseCase
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.GetShopListUseCase
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
+import javax.inject.Inject
 
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = ShopListRepositoryImpl(application)
-
-    private val getShopListUseCase = GetShopListUseCase(repository)
-    private val editShopItemUseCase = EditShopItemUseCase(repository)
-    private val deleteShopItemUseCase = DeleteShopItemUseCase(repository)
+class MainViewModel @Inject constructor(
+    private val getShopListUseCase: GetShopListUseCase,
+    private val editShopItemUseCase: EditShopItemUseCase,
+    private val deleteShopItemUseCase: DeleteShopItemUseCase
+) : ViewModel() {
 
     val shopList = getShopListUseCase.getShopList()
 
@@ -32,7 +32,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun deleteShopItem(shopItem: ShopItem) {
-       viewModelScope.launch {
+        viewModelScope.launch {
             deleteShopItemUseCase.deleteShopItem(shopItem)
         }
     }
