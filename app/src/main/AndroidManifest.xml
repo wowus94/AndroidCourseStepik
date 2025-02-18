@@ -29,6 +29,10 @@
             tools:replace="android:authorities" />
 
         <service
+            android:name=".broadcast_receiver_app.TestService"
+            android:exported="false" />
+
+        <service
             android:name=".services_test_app.TestForegroundService"
             android:enabled="true"
             android:exported="false"

@@ -7,8 +7,18 @@ import android.widget.Toast
 
 
 class TestReceiver : BroadcastReceiver() {
+
     override fun onReceive(context: Context?, intent: Intent?) {
         when (intent?.action) {
+//            "loaded" -> {
+//                val percent = intent.getIntExtra("percent", 0)
+//                Toast.makeText(
+//                    context,
+//                    "Загружено $percent",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            }
+
             Intent.ACTION_BATTERY_LOW -> {
                 Toast.makeText(context, "Низкий заряд батареи", Toast.LENGTH_SHORT).show()
             }
@@ -18,5 +28,11 @@ class TestReceiver : BroadcastReceiver() {
                 Toast.makeText(context, "Режим в самолете: $stateMode", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    companion object {
+
+        const val ACTION_CLICKED = "clicked"
+        const val EXTRA_COUNT = "count"
     }
 }
