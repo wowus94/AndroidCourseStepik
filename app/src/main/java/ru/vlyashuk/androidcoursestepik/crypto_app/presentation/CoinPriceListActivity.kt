@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.cryptoapp.presentation.adapters.CoinInfoAdapter
+import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.crypto_app.domain.CoinInfo
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityCoinPriceListBinding
@@ -19,7 +20,7 @@ class CoinPriceListActivity : AppCompatActivity() {
     }
 
     private val component by lazy {
-        (application as CoinApp).component
+        (application as MainApp).component
     }
 
     private lateinit var viewModel: CoinViewModel

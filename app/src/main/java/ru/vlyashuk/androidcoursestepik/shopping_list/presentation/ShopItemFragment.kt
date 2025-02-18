@@ -13,10 +13,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
+import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.FragmentShopItemBinding
 import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ShopItemViewModel
+import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ViewModelFactoryShoppingList
+import javax.inject.Inject
 
 class ShopItemFragment : Fragment() {
 
@@ -35,7 +38,15 @@ class ShopItemFragment : Fragment() {
     private lateinit var countEditText: EditText
     private lateinit var saveButton: Button
 
+    @Inject
+    lateinit var viewModelFactoryShoppingList: ViewModelFactoryShoppingList
+
+    private val component by lazy {
+        (requireActivity().application as MainApp).componentShoppingList
+    }
+
     override fun onAttach(context: Context) {
+        component.inject(this)
         super.onAttach(context)
         if (context is OnShopItemEditingFinishedListener) {
             shopItemFinishedListener = context
@@ -61,7 +72,8 @@ class ShopItemFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this)[ShopItemViewModel::class.java]
+        viewModel =
+            ViewModelProvider(this, viewModelFactoryShoppingList)[ShopItemViewModel::class.java]
         requireActivity().findViewById<FloatingActionButton>(R.id.addShopItemButton).hide()
         initView()
         addTextChangeListeners()

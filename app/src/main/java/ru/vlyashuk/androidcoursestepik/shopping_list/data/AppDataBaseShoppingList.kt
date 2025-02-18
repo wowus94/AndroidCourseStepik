@@ -6,16 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [ShopItemDbModel::class], version = 1, exportSchema = false)
-abstract class AppDataBase : RoomDatabase() {
+abstract class AppDataBaseShoppingList : RoomDatabase() {
 
     abstract fun shopListDao(): ShopListDao
 
     companion object {
-        private var INSTANCE: AppDataBase? = null
+        private var INSTANCE: AppDataBaseShoppingList? = null
         private val LOCK = Any()
         private const val DB_NAME = "shop_item.db"
 
-        fun getInstance(application: Application): AppDataBase {
+        fun getInstance(application: Application): AppDataBaseShoppingList {
             INSTANCE?.let {
                 return it
             }
@@ -25,7 +25,7 @@ abstract class AppDataBase : RoomDatabase() {
                 }
                 val db = Room.databaseBuilder(
                     application,
-                    AppDataBase::class.java,
+                    AppDataBaseShoppingList::class.java,
                     DB_NAME
                 ).build()
                 INSTANCE = db
