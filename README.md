@@ -2,6 +2,7 @@
 
 # 18.02.2025
 - настройка передачи параметров в конструктор Worker
+- использование Multiple Workers
 
 # 17.02.2025
 - практика Custom Builder, BindsInstance

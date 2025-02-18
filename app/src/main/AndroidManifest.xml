@@ -23,12 +23,6 @@
             android:authorities="androidx.work.WorkManagerInitializer"
             tools:node="remove"
             tools:replace="android:authorities" />
-        <activity
-            android:name=".dagger_app.example_two.presentation.ExampleMainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".dagger_app.example_one.MainDaggerActivity"
-            android:exported="false" />
 
         <service
             android:name=".services_test_app.TestForegroundService"
