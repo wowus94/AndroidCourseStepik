@@ -4,6 +4,7 @@
 - настройка передачи параметров в конструктор Worker
 - использование Multiple Workers
 - добавление Dagger2 в приложение "Список покупок"
+- добавление приложения для теста BroadcastReceiver
 
 # 17.02.2025
 - практика Custom Builder, BindsInstance
