@@ -63,4 +63,8 @@
     <string name="last_updated_label">Обновлено:</string>
     <string name="description_crypto_app">Приложение отображает курс различных криптовалют. Список обновляется каждые 10 секунд. По клику на валюту открывается окно детальной информации о валюте, так же с обновлением раз в 10 секунд.</string>
 
+<!--    Broadcast Receiver-->
+    <string name="broadcast_receiver">Broadcast Receiver</string>
+    <string name="description_broadcast_receiver">Приложение для изучения Broadcast Receiver - это класс в Android, который позволяет приложениям получать уведомления о системных событиях или событиях, создаваемых (другими )приложениями.</string>
+
 </resources>

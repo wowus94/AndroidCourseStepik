@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import ru.vlyashuk.androidcoursestepik.broadcast_receiver_app.MainBroadcastReceiverActivity
 import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinPriceListActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(navigate)
             }
 
+            broadcastReceiverApp.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainBroadcastReceiverActivity::class.java)
+                startActivity(navigate)
+            }
         }
     }
 }

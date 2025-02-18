@@ -1,91 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/margin_8dp"
-        android:text="@string/select_app"
-        android:textColor="@color/black"
-        android:textSize="@dimen/title_text_size_18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/shoppingList"
-        style="@style/NameTitleStyle"
+    <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/shopping_list" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/descriptionShoppingList"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_shopping_app" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_8dp"
+            android:text="@string/select_app"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_text_size_18sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/theNumber"
-        style="@style/NameTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/the_number" />
+        <TextView
+            android:id="@+id/shoppingList"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shopping_list" />
 
-    <TextView
-        android:id="@+id/descriptionTheNumberApp"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_the_number_app" />
+        <TextView
+            android:id="@+id/descriptionShoppingList"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_shopping_app" />
 
-    <TextView
-        android:id="@+id/coroutineApp"
-        style="@style/NameTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/coroutine" />
+        <TextView
+            android:id="@+id/theNumber"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/the_number" />
 
-    <TextView
-        android:id="@+id/descriptionCoroutineApp"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_coroutine_app" />
+        <TextView
+            android:id="@+id/descriptionTheNumberApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_the_number_app" />
 
-    <TextView
-        android:id="@+id/servicesTestApp"
-        style="@style/NameTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/services" />
+        <TextView
+            android:id="@+id/coroutineApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/coroutine" />
 
-    <TextView
-        android:id="@+id/descriptionServiceApp"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_service_app" />
+        <TextView
+            android:id="@+id/descriptionCoroutineApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_coroutine_app" />
 
-    <TextView
-        android:id="@+id/cryptoApp"
-        style="@style/NameTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/crypto" />
+        <TextView
+            android:id="@+id/servicesTestApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/services" />
 
-    <TextView
-        android:id="@+id/descriptionCryptoApp"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_crypto_app" />
+        <TextView
+            android:id="@+id/descriptionServiceApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_service_app" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/cryptoApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crypto" />
+
+        <TextView
+            android:id="@+id/descriptionCryptoApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_crypto_app" />
+
+        <TextView
+            android:id="@+id/broadcastReceiverApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/broadcast_receiver" />
+
+        <TextView
+            android:id="@+id/descriptionBroadcastReceiverApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_broadcast_receiver" />
+
+    </LinearLayout>
+</ScrollView>
