@@ -5,6 +5,7 @@
 - использование Multiple Workers
 - добавление Dagger2 в приложение "Список покупок"
 - добавление приложения для теста BroadcastReceiver
+- практика работы с BroadcastReceiver
 
 # 17.02.2025
 - практика Custom Builder, BindsInstance
