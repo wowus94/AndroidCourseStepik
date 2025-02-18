@@ -88,18 +88,4 @@
         android:layout_height="wrap_content"
         android:text="@string/description_crypto_app" />
 
-    <TextView
-        android:id="@+id/dagger2App"
-        style="@style/NameTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/dagger2" />
-
-    <TextView
-        android:id="@+id/descriptionDagger2App"
-        style="@style/DescriptionTitleStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/description_dagger2_app" />
-
 </LinearLayout>
