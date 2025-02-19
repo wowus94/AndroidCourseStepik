@@ -119,14 +119,7 @@ class ShoppingListActivity : AppCompatActivity(),
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val shopItem = shopListAdapter.currentList[viewHolder.adapterPosition]
-                //mainViewModel.deleteShopItem(shopItem)
-                thread {
-                    contentResolver.delete(
-                        Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
-                        null,
-                        arrayOf(shopItem.id.toString())
-                    )
-                }
+                mainViewModel.deleteShopItem(shopItem)
             }
         }
         val itemTouchHelper = ItemTouchHelper(shopItemDeleteCallback)

@@ -170,18 +170,7 @@ class ShopItemFragment : Fragment() {
 
     private fun launchAddMode() {
         saveButton.setOnClickListener {
-           // viewModel.addShopItem(nameEditText.text?.toString(), countEditText.text?.toString())
-            thread {
-                context?.contentResolver?.insert(
-                    Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
-                    ContentValues().apply {
-                        put("id", 0)
-                        put("name", nameEditText.text?.toString())
-                        put("count", countEditText.text?.toString()?.toInt())
-                        put("enabled", true)
-                    }
-                )
-            }
+            viewModel.addShopItem(nameEditText.text?.toString(), countEditText.text?.toString())
         }
     }
 
