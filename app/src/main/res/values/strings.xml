@@ -74,4 +74,9 @@
     <string name="description_content_provider">Приложение для практики работы с Content Provider</string>
     <string name="description_work_content_provider_app">Приложение запрашивает различные разрешения у системы. Например, чтение контактов</string>
 
+    <!--    Factorial Calculate-->
+    <string name="factorial_calculate">Факториал числа</string>
+    <string name="description_factorial_calculate">Приложение для рассчета факториала числа. Пример - факториал числа 3: 1*2*3=6</string>
+    <string name="calculate">Рассчитать</string>
+
 </resources>
