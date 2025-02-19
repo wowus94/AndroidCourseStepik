@@ -3,6 +3,7 @@ package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.vlyashuk.androidcoursestepik.MainApp
 import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityShoppingListBinding
+import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.adapters.ShopListRecyclerViewAdapter
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.MainViewModel
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ViewModelFactoryShoppingList
 import javax.inject.Inject
+import kotlin.concurrent.thread
 
 class ShoppingListActivity : AppCompatActivity(),
     ShopItemFragment.OnShopItemEditingFinishedListener {
@@ -55,16 +58,30 @@ class ShoppingListActivity : AppCompatActivity(),
                 )
             }
         }
-
-        contentResolver.query(
-            Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
-            null,
-            null,
-            null,
-            null,
-            null
-        )
-
+        thread {
+            val cursor = contentResolver.query(
+                Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
+                null,
+                null,
+                null,
+                null,
+                null
+            )
+            while (cursor?.moveToNext() == true) {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+                val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
+                val count = cursor.getInt(cursor.getColumnIndexOrThrow("count"))
+                val enabled = cursor.getInt(cursor.getColumnIndexOrThrow("enabled")) > 0
+                val shopItem = ShopItem(
+                    id = id,
+                    name = name,
+                    count = count,
+                    enabled = enabled
+                )
+                Log.i("MainActivity", "$shopItem")
+            }
+            cursor?.close()
+        }
     }
 
     private fun setupRecyclerViewAdapter() {
