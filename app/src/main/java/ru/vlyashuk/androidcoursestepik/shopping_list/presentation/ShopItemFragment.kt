@@ -1,6 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.shopping_list.presentation
 
+import android.content.ContentValues
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -20,6 +22,7 @@ import ru.vlyashuk.androidcoursestepik.shopping_list.domain.ShopItem
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ShopItemViewModel
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.viewmodels.ViewModelFactoryShoppingList
 import javax.inject.Inject
+import kotlin.concurrent.thread
 
 class ShopItemFragment : Fragment() {
 
@@ -167,7 +170,18 @@ class ShopItemFragment : Fragment() {
 
     private fun launchAddMode() {
         saveButton.setOnClickListener {
-            viewModel.addShopItem(nameEditText.text?.toString(), countEditText.text?.toString())
+           // viewModel.addShopItem(nameEditText.text?.toString(), countEditText.text?.toString())
+            thread {
+                context?.contentResolver?.insert(
+                    Uri.parse("content://ru.vlyashuk.androidcoursestepik.shopping_list/shop_items"),
+                    ContentValues().apply {
+                        put("id", 0)
+                        put("name", nameEditText.text?.toString())
+                        put("count", countEditText.text?.toString()?.toInt())
+                        put("enabled", true)
+                    }
+                )
+            }
         }
     }
 
