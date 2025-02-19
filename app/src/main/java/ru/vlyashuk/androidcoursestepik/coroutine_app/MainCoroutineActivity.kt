@@ -1,9 +1,12 @@
 package ru.vlyashuk.androidcoursestepik.coroutine_app
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainCoroutineBinding
@@ -21,17 +24,24 @@ class MainCoroutineActivity : AppCompatActivity() {
         binding.loadButton.setOnClickListener {
             binding.progressBar.isVisible = true
             binding.loadButton.isEnabled = false
-            val jobCity = lifecycleScope.launch {
+            val deferredCity: Deferred<String> = lifecycleScope.async {
                 val city = loadCity()
                 binding.locationTextView.text = city
+                city
             }
-            val jobTemp = lifecycleScope.launch {
+            val deferredTemp: Deferred<Int> = lifecycleScope.async {
                 val temp = loadTemperature()
                 binding.temperatureTextView.text = temp.toString()
+                temp
             }
             lifecycleScope.launch {
-                jobCity.join()
-                jobTemp.join()
+                val city = deferredCity.await()
+                val temp = deferredTemp.await()
+                Toast.makeText(
+                    this@MainCoroutineActivity,
+                    "Город: $city Температура: $temp",
+                    Toast.LENGTH_SHORT
+                ).show()
                 binding.progressBar.isVisible = false
                 binding.loadButton.isEnabled = true
             }
@@ -40,7 +50,7 @@ class MainCoroutineActivity : AppCompatActivity() {
 
     private suspend fun loadCity(): String {
         delay(2000)
-        return "Belgorod"
+        return "Белгород"
     }
 
     private suspend fun loadTemperature(): Int {
