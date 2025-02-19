@@ -107,5 +107,19 @@
             android:layout_height="wrap_content"
             android:text="@string/description_broadcast_receiver" />
 
+        <TextView
+            android:id="@+id/contentProviderApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/content_provider" />
+
+        <TextView
+            android:id="@+id/descriptionContentProviderApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_content_provider" />
+
     </LinearLayout>
 </ScrollView>

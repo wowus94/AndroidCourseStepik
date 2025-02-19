@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.vlyashuk.androidcoursestepik.broadcast_receiver_app.MainBroadcastReceiverActivity
+import ru.vlyashuk.androidcoursestepik.content_provider_app.MainContentProviderActivity
 import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinPriceListActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
@@ -58,6 +59,11 @@ class MainActivity : AppCompatActivity() {
 
             broadcastReceiverApp.setOnClickListener {
                 val navigate = Intent(this@MainActivity, MainBroadcastReceiverActivity::class.java)
+                startActivity(navigate)
+            }
+
+            contentProviderApp.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainContentProviderActivity::class.java)
                 startActivity(navigate)
             }
         }

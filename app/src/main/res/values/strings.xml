@@ -63,10 +63,15 @@
     <string name="last_updated_label">Обновлено:</string>
     <string name="description_crypto_app">Приложение отображает курс различных криптовалют. Список обновляется каждые 10 секунд. По клику на валюту открывается окно детальной информации о валюте, так же с обновлением раз в 10 секунд.</string>
 
-<!--    Broadcast Receiver-->
+    <!--    Broadcast Receiver-->
     <string name="broadcast_receiver">Broadcast Receiver</string>
     <string name="description_broadcast_receiver">Приложение для изучения Broadcast Receiver - это класс в Android, который позволяет приложениям получать уведомления о системных событиях или событиях, создаваемых (другими )приложениями.</string>
     <string name="load_broadcast_receiver">Выполнить загрузку</string>
     <string name="description_app_work">Приложение реагирует на включение/отключение режима В самолете и низкий заряд батареи отображая уведомление внизу экрана. Кнопка имитирует загрузку данных через BroadcastReceiver, отображая прогресс.</string>
+
+    <!--    Content Provider-->
+    <string name="content_provider">Content Provider</string>
+    <string name="description_content_provider">Приложение для практики работы с Content Provider</string>
+    <string name="description_work_content_provider_app">Приложение запрашивает различные разрешения у системы. Например, чтение контактов</string>
 
 </resources>
