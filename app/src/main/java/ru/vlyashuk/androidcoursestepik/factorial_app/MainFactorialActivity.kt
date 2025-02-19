@@ -28,25 +28,32 @@ class MainFactorialActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.state.observe(this) {
-            if (it.isError) {
-                Toast.makeText(
-                    this,
-                    "Введите число",
-                    Toast.LENGTH_SHORT
-                ).show()
+            with(binding) {
+                progressBarLoading.visibility = View.GONE
+                buttonCalculate.isEnabled = true
             }
-            if (it.isInProgress) {
-                with(binding) {
-                    progressBarLoading.visibility = View.VISIBLE
-                    buttonCalculate.isEnabled = false
+
+            when (it) {
+
+                is Error -> {
+                    Toast.makeText(
+                        this,
+                        "Введите число",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            } else {
-                with(binding) {
-                    progressBarLoading.visibility = View.GONE
-                    buttonCalculate.isEnabled = true
+
+                is Progress -> {
+                    with(binding) {
+                        progressBarLoading.visibility = View.VISIBLE
+                        buttonCalculate.isEnabled = false
+                    }
+                }
+
+                is Result -> {
+                    binding.textViewFactorial.text = it.factorial
                 }
             }
-            binding.textViewFactorial.text = it.factorial
         }
     }
 }
