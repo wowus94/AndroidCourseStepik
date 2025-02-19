@@ -11,6 +11,7 @@
 - использование Stateful ViewModel
 - переход на использование Sealed Class
 - использование Suspend Coroutine
+- использование Coroutine Scope и Coroutine Context
 
 # 18.02.2025
 - настройка передачи параметров в конструктор Worker
