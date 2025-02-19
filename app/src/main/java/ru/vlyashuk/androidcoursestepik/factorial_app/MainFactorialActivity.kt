@@ -50,8 +50,8 @@ class MainFactorialActivity : AppCompatActivity() {
                     }
                 }
 
-                is Result -> {
-                    binding.textViewFactorial.text = it.factorial
+                is Factorial -> {
+                    binding.textViewFactorial.text = it.value
                 }
             }
         }
