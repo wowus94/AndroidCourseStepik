@@ -11,6 +11,7 @@ import ru.vlyashuk.androidcoursestepik.content_provider_app.MainContentProviderA
 import ru.vlyashuk.androidcoursestepik.coroutine_app.MainCoroutineActivity
 import ru.vlyashuk.androidcoursestepik.crypto_app.presentation.CoinPriceListActivity
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainBinding
+import ru.vlyashuk.androidcoursestepik.factorial_app.MainFactorialActivity
 import ru.vlyashuk.androidcoursestepik.services_test_app.ServicesTestMainActivity
 import ru.vlyashuk.androidcoursestepik.shopping_list.presentation.ShoppingListActivity
 import ru.vlyashuk.androidcoursestepik.the_number.presentation.MainNumberActivity
@@ -64,6 +65,11 @@ class MainActivity : AppCompatActivity() {
 
             contentProviderApp.setOnClickListener {
                 val navigate = Intent(this@MainActivity, MainContentProviderActivity::class.java)
+                startActivity(navigate)
+            }
+
+            factorialCalculateApp.setOnClickListener {
+                val navigate = Intent(this@MainActivity, MainFactorialActivity::class.java)
                 startActivity(navigate)
             }
         }

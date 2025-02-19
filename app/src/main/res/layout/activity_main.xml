@@ -121,5 +121,19 @@
             android:layout_height="wrap_content"
             android:text="@string/description_content_provider" />
 
+        <TextView
+            android:id="@+id/factorialCalculateApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/factorial_calculate" />
+
+        <TextView
+            android:id="@+id/descriptionFactorialCalculateApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_factorial_calculate" />
+
     </LinearLayout>
 </ScrollView>
