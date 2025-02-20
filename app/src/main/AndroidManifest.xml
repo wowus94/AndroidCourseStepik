@@ -20,6 +20,25 @@
         android:theme="@style/Theme.AndroidCourseStepik"
         tools:targetApi="31">
         <activity
+            android:name=".flow_test_app.Users2Activity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".flow_test_app.UsersActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".flow_test_app.MainFlowActivity"
+            android:exported="false" />
+        <activity
             android:name=".factorial_app.MainFactorialActivity"
             android:exported="false" />
         <activity

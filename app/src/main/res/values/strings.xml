@@ -79,4 +79,12 @@
     <string name="description_factorial_calculate">Приложение для рассчета факториала числа. Пример - факториал числа 3: 1*2*3=6</string>
     <string name="calculate">Рассчитать</string>
 
+    <!--    Flow App-->
+    <string name="flow_app">Flow</string>
+    <string name="description_flow_app">Приложение для изучения Flow</string>
+    <string name="add_user">Add user</string>
+    <string name="enter_username">Enter username:</string>
+    <string name="users_activity">Users Activity</string>
+    <string name="launch_next_screen">Launch next screen</string>
+
 </resources>
