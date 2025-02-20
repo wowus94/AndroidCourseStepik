@@ -1,5 +1,9 @@
 Приложение согласно курсу Android: Профессиональный уровень + Подготовка к собеседованию
 
+# 20.02.2025
+- Практика Flow
+- Flow Builders и Terminal Operators
+
 # 19.02.2025
 - практика Cursor Content Providers
 - практика добавления объектов в список через метод insert в Content Provider
