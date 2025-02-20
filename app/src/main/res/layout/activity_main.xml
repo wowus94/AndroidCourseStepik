@@ -135,5 +135,19 @@
             android:layout_height="wrap_content"
             android:text="@string/description_factorial_calculate" />
 
+        <TextView
+            android:id="@+id/flowApp"
+            style="@style/NameTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/flow_app" />
+
+        <TextView
+            android:id="@+id/descriptionFlowApp"
+            style="@style/DescriptionTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_flow_app" />
+
     </LinearLayout>
 </ScrollView>
