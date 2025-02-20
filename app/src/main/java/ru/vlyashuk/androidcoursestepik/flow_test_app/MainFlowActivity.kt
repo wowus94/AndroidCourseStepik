@@ -20,5 +20,9 @@ class MainFlowActivity : AppCompatActivity() {
         binding.buttonUsersActivity.setOnClickListener {
             startActivity(UsersActivity.newIntent(this))
         }
+
+        binding.buttonCryptoActivity.setOnClickListener {
+            startActivity(CryptoActivity.newIntent(this))
+        }
     }
 }
