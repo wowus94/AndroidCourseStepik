@@ -3,6 +3,7 @@
 # 20.02.2025
 - Практика Flow
 - Flow Builders и Terminal Operators
+- Map Flow to LiveData
 
 # 19.02.2025
 - практика Cursor Content Providers
