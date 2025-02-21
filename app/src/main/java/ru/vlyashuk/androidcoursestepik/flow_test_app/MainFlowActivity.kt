@@ -1,12 +1,9 @@
 package ru.vlyashuk.androidcoursestepik.flow_test_app
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import ru.vlyashuk.androidcoursestepik.R
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityMainFlowBinding
+import ru.vlyashuk.androidcoursestepik.flow_test_app.team_score.TeamScoreActivity
 
 class MainFlowActivity : AppCompatActivity() {
 
@@ -23,6 +20,10 @@ class MainFlowActivity : AppCompatActivity() {
 
         binding.buttonCryptoActivity.setOnClickListener {
             startActivity(CryptoActivity.newIntent(this))
+        }
+
+        binding.teamScoreActivity.setOnClickListener {
+            startActivity(TeamScoreActivity.newIntent(this))
         }
     }
 }
