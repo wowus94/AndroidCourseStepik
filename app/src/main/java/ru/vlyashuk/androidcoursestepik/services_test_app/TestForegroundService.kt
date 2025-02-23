@@ -1,9 +1,10 @@
 package ru.vlyashuk.androidcoursestepik.services_test_app
 
-import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
+import android.content.Context
 import android.content.Intent
+import android.os.Binder
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.CoroutineScope
@@ -20,11 +21,15 @@ class TestForegroundService : Service() {
         getSystemService(NotificationManager::class.java)
     }
 
-    override fun onBind(intent: Intent?): IBinder? = null
+    override fun onBind(intent: Intent?): IBinder {
+        return LocalBinder()
+    }
 
     private val notificationBuilder by lazy {
         createNotificationBuilder()
     }
+
+    var onProgressChanged: ((Int) -> Unit)? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -33,12 +38,13 @@ class TestForegroundService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         scope.launch {
-            for (i in 0..100 step 5) {
+            for (i in 0..100 step 10) {
                 delay(1000)
                 val notification = notificationBuilder
                     .setProgress(100, i, false)
                     .build()
                 manager.notify(1, notification)
+                onProgressChanged?.invoke(i)
                 println((i + 1).toString())
             }
             stopSelf()
@@ -52,15 +58,6 @@ class TestForegroundService : Service() {
         stopSelf()
     }
 
-    private fun createNotification() {
-        val channel = NotificationChannel(
-            CHANNEL_ID,
-            "Foreground Service Channel",
-            NotificationManager.IMPORTANCE_HIGH
-        )
-        manager.createNotificationChannel(channel)
-    }
-
     private fun createNotificationBuilder() = NotificationCompat.Builder(this, CHANNEL_ID)
         .setContentTitle("Foreground Service")
         .setContentText("Сервис работает...")
@@ -68,7 +65,16 @@ class TestForegroundService : Service() {
         .setProgress(100, 0, false)
         .setOnlyAlertOnce(true)
 
+    inner class LocalBinder : Binder() {
+        fun getService() = this@TestForegroundService
+    }
+
     companion object {
         private const val CHANNEL_ID = "foreground_service_channel"
+
+        fun newIntent(context: Context): Intent {
+            return Intent(context, TestForegroundService::class.java)
+        }
     }
+
 }

@@ -5,9 +5,11 @@ import android.app.job.JobScheduler
 import android.app.job.JobWorkItem
 import android.content.ComponentName
 import android.content.Intent
+import android.content.ServiceConnection
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.os.IBinder
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -23,6 +25,22 @@ class ServicesTestMainActivity : AppCompatActivity() {
     }
 
     private var page = 0
+
+    private val serviceConnection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, service: IBinder) {
+            val binder = (service as? TestForegroundService.LocalBinder) ?: return
+            val testForegroundService = binder.getService()
+            testForegroundService.onProgressChanged = { progress ->
+                binding.progressBarLoading.progress = progress
+            }
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            Toast.makeText(this@ServicesTestMainActivity, "Загрузка завершена", Toast.LENGTH_SHORT)
+                .show()
+        }
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,10 +132,20 @@ class ServicesTestMainActivity : AppCompatActivity() {
         )
     }
 
+    override fun onStart() {
+        super.onStart()
+        bindService(
+            TestForegroundService.newIntent(this),
+            serviceConnection,
+            0
+        )
+    }
+
     override fun onStop() {
         super.onStop()
         stopService(TestBackgroundService.newIntent(this))
         stopService(Intent(this@ServicesTestMainActivity, TestForegroundService::class.java))
+        unbindService(serviceConnection)
     }
 
     companion object {
