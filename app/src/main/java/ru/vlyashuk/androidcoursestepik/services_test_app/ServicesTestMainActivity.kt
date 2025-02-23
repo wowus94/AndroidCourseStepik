@@ -1,5 +1,8 @@
 package ru.vlyashuk.androidcoursestepik.services_test_app
 
+import android.app.AlarmManager
+import android.app.AlarmManager.RTC_WAKEUP
+import android.app.PendingIntent
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
 import android.app.job.JobWorkItem
@@ -10,6 +13,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
+import android.widget.CalendarView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -17,6 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import ru.vlyashuk.androidcoursestepik.databinding.ActivityServicesTestMainBinding
+import java.util.Calendar
 
 class ServicesTestMainActivity : AppCompatActivity() {
 
@@ -84,6 +89,21 @@ class ServicesTestMainActivity : AppCompatActivity() {
                     ExistingWorkPolicy.APPEND,
                     TestWorker.makeRequest(page++)
                 )
+            }
+
+            alarmManager.setOnClickListener {
+                val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+                val calendar = Calendar.getInstance()
+                calendar.add(Calendar.SECOND, 20)
+                val intent = AlarmReceiver.newIntent(this@ServicesTestMainActivity)
+                val pendingIntent =
+                    PendingIntent.getBroadcast(
+                        this@ServicesTestMainActivity,
+                        100,
+                        intent,
+                        PendingIntent.FLAG_IMMUTABLE
+                    )
+                alarmManager.setExact(RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
             }
         }
     }

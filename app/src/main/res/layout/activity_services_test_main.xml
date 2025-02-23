@@ -72,12 +72,17 @@
         android:layout_height="wrap_content"
         android:text="@string/job_scheduler" />
 
+    <TextView
+        style="@style/DescriptionTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Через 20 секунд отобразиться уведомление:" />
+
     <Button
         android:id="@+id/alarm_manager"
         style="@style/ServiceButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
         android:text="@string/alarm_manager" />
 
     <TextView
