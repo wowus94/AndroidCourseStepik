@@ -1,6 +1,5 @@
 package ru.vlyashuk.androidcoursestepik.services_test_app
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
@@ -17,17 +16,29 @@ class TestForegroundService : Service() {
 
     private val scope = CoroutineScope(Dispatchers.Main)
 
+    private val manager by lazy {
+        getSystemService(NotificationManager::class.java)
+    }
+
     override fun onBind(intent: Intent?): IBinder? = null
+
+    private val notificationBuilder by lazy {
+        createNotificationBuilder()
+    }
 
     override fun onCreate() {
         super.onCreate()
-        startForeground(1, createNotification())
+        startForeground(1, notificationBuilder.build())
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         scope.launch {
-            for (i in 0 until 3) {
-                delay(3000)
+            for (i in 0..100 step 5) {
+                delay(1000)
+                val notification = notificationBuilder
+                    .setProgress(100, i, false)
+                    .build()
+                manager.notify(1, notification)
                 println((i + 1).toString())
             }
             stopSelf()
@@ -41,20 +52,23 @@ class TestForegroundService : Service() {
         stopSelf()
     }
 
-    private fun createNotification(): Notification {
-        val channelId = "foreground_service_channel"
+    private fun createNotification() {
         val channel = NotificationChannel(
-            channelId,
+            CHANNEL_ID,
             "Foreground Service Channel",
             NotificationManager.IMPORTANCE_HIGH
         )
-        val manager = getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(channel)
+    }
 
-        return NotificationCompat.Builder(this, channelId)
-            .setContentTitle("Foreground Service")
-            .setContentText("Сервис работает...")
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .build()
+    private fun createNotificationBuilder() = NotificationCompat.Builder(this, CHANNEL_ID)
+        .setContentTitle("Foreground Service")
+        .setContentText("Сервис работает...")
+        .setSmallIcon(R.drawable.ic_launcher_foreground)
+        .setProgress(100, 0, false)
+        .setOnlyAlertOnce(true)
+
+    companion object {
+        private const val CHANNEL_ID = "foreground_service_channel"
     }
 }
