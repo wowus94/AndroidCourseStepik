@@ -40,7 +40,7 @@ class TestIntentService : IntentService(NAME) {
         manager.createNotificationChannel(channel)
 
         return NotificationCompat.Builder(this, channelId)
-            .setContentTitle("Foreground Service")
+            .setContentTitle("Intent Service")
             .setContentText("Сервис работает...")
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .build()

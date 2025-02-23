@@ -3,6 +3,7 @@
 # 23.02.2025
 - добавление индикатора загрузки в уведомление Foreground Service ServiceTestApp
 - добавление индикатора загрузки на экране ServiceTestApp и объединение его с Foreground Service
+- практика AlarmManager
 
 # 21.02.2025
 - практика StateFlow
